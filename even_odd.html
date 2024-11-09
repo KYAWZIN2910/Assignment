@@ -14,11 +14,13 @@
 
             // Polymorphic function to check if numbers are odd or even
             checkOddEven(input) {
-                // check if input is a single number
+                // check if input is a single number/ if it is, check odd or even
                 if (typeof input == 'number') {
-                    return input % 2 == 0 ? "Even" : "Odd";
+                    return input % 2 == 0 ? "Even" : "Odd"; //Note-condition ? expressionIfTrue : expressionIfFalse;
                 }
+                //if input is an array, input.map() to create a new array with results for each element
                 else if (Array.isArray(input)) {
+                    // num => is an arrow function to check each element in the array step by step
                     return input.map(num => {
                         return typeof num == 'number' ? (num % 2 == 0 ? "Even" : "Odd") : "Invalid input";
                     });
